@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="LibraryApp">
+    <head>
+        <title>Library Book Genres</title>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="GenreController as genreCtrl">
+            <h2>Select Book Genre</h2>
+            <select ng-model="genreCtrl.selectGenre">
+                <option value="Fiction">Fictional</option>
+                <option value="comics">comics</option>
+                <option value="Crime">Crime</option>
+                <option value="Horror">Horror</option>Crime fiction, detective story, murder mystery, mystery novel, and police novel are terms used to describe narratives that centre on criminal acts and especially on the investigation, either by an amateur or a professional detective, of a crime, often a murder.
+
+            </select>
+        
+        <div ng-switch="genreCtrl.selectGenre">
+            <div ng-switch-when="Fiction">
+                <h3>Fiction</h3>
+                <p>Here in this fiction section,
+                  Friction will keep you on the edge of your seat with breathtaking plot twists and the unforgettable characters that make Sandra Brown one of the world's best-loved authors</p>
+            </div>
+            <div ng-switch-when="comics">
+                <h3>comics</h3>
+                <p>Here in this comics section,  is a publication that consists of comics art in the form of sequential juxtaposed panels that represent individual scenes.</p>
+            </div>
+            <div ng-switch-when="Crime">
+                <h3>Crime</h3>
+                <p>Here in this crime section of booksCrime fiction, detective story, murder mystery, mystery novel, and police novel are terms used to describe narratives that centre on criminal acts and especially on the investigation, either by an amateur or a professional detective, of a crime, often a murder.  </p>
+            </div>
+            <div ng-switch-when="Horror">
+                <h3>Horror</h3>
+                <p>Here in this horror section, Horror is a genre of literature, film, and television that is meant to scare, startle, shock, and even repulse audiences</p>
+            </div>
+            <div ng-switch-default>
+                <h3>Select a Genre</h3>
+                <p>Please select a book genre to continue</p>
+            </div>
+        </div>
+    </div>
+        <script>
+            angular.module('LibraryApp',[])
+            .controller('GenreController',function(){
+                var genreCtrl=this;
+                genreCtrl.selectedGenre="";
+            })
+        </script>
+    </body>
+</html>
